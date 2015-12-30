@@ -17,7 +17,7 @@ defmodule Codelock.Mixfile do
 
   defp deps do
     [
-      { :exrm, "~> 0.15.0" },
+      { :exrm, "> 0.0.0" },
       { :elixir_ale, "~> 0.4.0" },
       { :ethernet, git: "https://github.com/cellulose/ethernet.git" },
       { :cowboy, "~> 1.0.0" },

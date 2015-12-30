@@ -12,12 +12,12 @@ defmodule Codelock.Router do
     {:ok, _} = Plug.Adapters.Cowboy.http Codelock.Router, []
   end
 
-  post "/digital_write/:gpio_out/:value" do
+  get "/digital_write/:gpio_out/:value" do
     gpio_out |> String.to_integer |> digital_write(String.to_integer(value))
     send_resp(conn, 200, "{}")
   end
 
-  post "/digital_read/:gpio_in" do
+  get "/digital_read/:gpio_in" do
     value = gpio_in |> String.to_integer |> digital_read
     send_resp(conn, 200, Poison.encode!(%{ value: value }))
   end
